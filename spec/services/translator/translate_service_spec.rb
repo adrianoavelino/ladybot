@@ -1,19 +1,19 @@
 require_relative './../../spec_helper.rb'
 
-describe 'TranslatorModule::Translate' do
+describe 'TranslatorModule::TranslateService' do
 
-  let(:translateText) { TranslatorModule::Translate.new({"text" => "livro", "direction_of_translation" => 'pt-en'}) }
+  let(:translateText) { TranslatorModule::TranslateService.new({"text" => "livro", "direction_of_translation" => 'pt-en'}) }
 
   describe '#call' do
     context 'Without params' do
       it 'Will receive an error without text' do
-        translateTextWithoutParams = TranslatorModule::Translate.new({})
+        translateTextWithoutParams = TranslatorModule::TranslateService.new({})
         response = translateTextWithoutParams.call()
         expect(response).to match('Texto em português é obrigatório')
       end
 
       it 'Will receive an error without lang' do
-        translateTextWithoutParams = TranslatorModule::Translate.new({ "text" => 'livro' })
+        translateTextWithoutParams = TranslatorModule::TranslateService.new({ "text" => 'livro' })
         response = translateTextWithoutParams.call()
         expect(response).to match('Parâmetro lang obrigatório')
       end

@@ -1,5 +1,5 @@
 module TranslatorModule
-  class Translate
+  class TranslateService
     def initialize(params)
       @text = params["text"]
       @direction_of_translation = params["direction_of_translation"]
@@ -26,7 +26,7 @@ module TranslatorModule
       codeResponse = response['code']
       case codeResponse
       when 200
-        JSON.parse(json)['text'].first
+        response['text'].first
       when 401
         'Chave secreta da api inválida'
       when 501
