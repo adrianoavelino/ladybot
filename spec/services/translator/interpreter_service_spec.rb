@@ -12,8 +12,8 @@ describe 'InterpretService' do
 
     context 'Valid command' do
       it 'return a translation' do
-        params = {"direction_of_translation" => 'pt-en', "text" => 'livro'}
-        response = InterpretService.call('translate',params)
+        my_params = {"text" => 'livro'}
+        response = InterpretService.call('translate_pt-en',my_params)
         expect(response).to match('book')
       end
 
