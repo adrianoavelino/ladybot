@@ -1,3 +1,5 @@
+`docker-compose run --rm -p 9292:9292 website rerun 'rackup config.ru -o 0.0.0.0'`: executa o docker escutando as alterações nos arquivos
+
 # lady-bot
 - Exemplo de requisição POST com a action `translate_pt-en`
 ```json
