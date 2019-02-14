@@ -3,10 +3,10 @@ class InterpretService
     case action
     when 'translate_pt-en'
       params["direction_of_translation"] = 'pt-en'
-      TranslatorModule::TranslateService.new(params).call()
+      "A tradução é *#{TranslatorModule::TranslateService.new(params).call()}*"
     when 'translate_en-pt'
       params["direction_of_translation"] = 'en-pt'
-      TranslatorModule::TranslateService.new(params).call()
+      "A tradução é *#{TranslatorModule::TranslateService.new(params).call()}*"
     when 'help'
       HelpService.call()
     else
